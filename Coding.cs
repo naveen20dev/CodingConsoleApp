@@ -151,7 +151,7 @@ public void SortBasedOnStringLength()
 
 public void MultipleOfTwoArray()
 {
-    int[] firstArr = {1,2,3,4,8};
+    int[] firstArr = {1,2,3,8};
     int[] secondarr = {5,6,7,8};
 
     if(firstArr.Length == secondarr.Length) {System.Console.WriteLine("Array Mismatch Length");}
