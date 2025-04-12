@@ -15,3 +15,9 @@ codingObj.ReverseSentence("Display the reverse of a word in a given sentence");
 codingObj.Reversethestring("Naveen");
 codingObj.SortBasedOnStringLength();
 codingObj.MultipleOfTwoArray();
+codingObj.GetSecondLargestNumber();
+codingObj.ImportantFunctionOfArray();
+codingObj.FindTwoArraySame();
+codingObj.CheckArrayIsSortedASC();
+codingObj.MergeTwoArray();
+codingObj.RemoveSpecificElementInArray(); //Remove the Specific Element from the Array and Print the Remaining Array 

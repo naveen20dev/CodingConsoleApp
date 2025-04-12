@@ -1,3 +1,6 @@
+using System.Buffers;
+using System.IO.IsolatedStorage;
+
 public class Coding
 {
     public void SumofArray()
@@ -167,6 +170,137 @@ public void MultipleOfTwoArray()
 
     }
 }
+
+    public void GetSecondLargestNumber()
+    {
+        int[] arr = {5,2,8,23,65,32};
+        int largestNumber = arr[0];
+        int secondLargestNumber = 0;
+
+        for(int i =0;i<arr.Length;i++)
+        {
+            if(arr[i] > largestNumber)
+            {
+                secondLargestNumber = largestNumber;
+                largestNumber = arr[i];
+            }
+            else if(arr[i] > secondLargestNumber && secondLargestNumber != largestNumber)
+            {
+                secondLargestNumber = arr[i];
+            }
+        }
+
+        System.Console.WriteLine($"Second Largest Number is :{secondLargestNumber}");
+    }
+
+    public void ImportantFunctionOfArray()
+    {
+        int[] Arr = {2,3,5,1,4};
+
+        string joinedArr = string.Join(", ",Arr);
+        System.Console.WriteLine(joinedArr);
+
+        Array.Sort(Arr);
+        string sortedArr = string.Join(", ", Arr);
+        System.Console.WriteLine(sortedArr);
+
+         Array.Reverse(Arr);
+         string reversdeArr = string.Join(", ",Arr);
+        System.Console.WriteLine(reversdeArr);
+
+        Array.Fill(Arr,1);
+        string filledArr = string.Join(", ",Arr);
+        System.Console.WriteLine(filledArr);
+
+        Arr = new int[] {1,2,3,4,5};
+        int[] newArr =  new int[7];
+        Array.Copy(Arr, newArr, Arr.Length);
+
+        string coprArr = string.Join(", ",newArr);
+        System.Console.WriteLine(coprArr);
+    }
+
+    public void FindTwoArraySame()
+    {
+        int [] arr1 = {3,2,5,1,6,7,8};
+        int [] arr2 = {3,2,5,2,6,7};
+        bool isBothArrEqual = true;
+
+      ///  System.Console.WriteLine(arr1.SequenceEqual(arr2));
+         if(arr1.Length == arr2.Length)
+         {
+            for(int i =0 ;i<arr1.Length; i++)
+            {
+               if(arr1[i] != arr2[i]){ isBothArrEqual = false; break;}
+            }
+         }
+         else{
+            isBothArrEqual = false;
+         }
+        string result = isBothArrEqual ? "Equal" : "Not Equals";
+         System.Console.WriteLine($"Both Array are {result}");
+    }
+    
+    public void CheckArrayIsSortedASC()
+    {
+        bool isSorted = true;
+        int[] arr1 = {1,2,7,4,5};
+        int firstElement = arr1[0];
+        for(int i = 1; i < arr1.Length ; i++)
+        {
+            if(firstElement > arr1[i])
+            {
+             isSorted = false; break;
+            }
+            firstElement = arr1[i];
+        }
+       string result  = isSorted ? "Sorted" : "Not Sorted";
+        System.Console.WriteLine($"Given Array is {result}");
+    }
+
+    public void MergeTwoArray()
+    {
+        int[] arr1= {1,2,3,5};
+        int[] arr2 = {8,7,4,9};
+
+        int[] arr3  = new int[arr1.Length + arr2.Length];
+
+        //Array.Copy(arr1,0,arr3,0,arr1.Length);
+        //Array.Copy(arr2,0,arr3,arr1.Length,arr2.Length);
+
+        for(int i = 0; i<arr1.Length;i++)
+        {
+            arr3[i] = arr1[i];
+            arr3[arr1.Length + i] = arr2[i];
+        }
+        string resultArr = string.Join(", ",arr3);
+        System.Console.WriteLine(resultArr);
+    }
+
+    public void RemoveSpecificElementInArray()
+    {
+        int[] arr1 =  {2, 4, 5,3,6,7,3};
+        int element = 3;
+        int count=0;
+        foreach(var item in arr1)
+        {
+            if(item == element) { count++; }
+        }
+
+        int[] arr2 = new int[(arr1.Length - count)];
+int index = 0;
+        for(int i = 0; i<arr1.Length; i++)
+        {
+            if(arr1[i]!= element)
+            {
+                arr2[index] = arr1[i];
+                index++;
+            }
+        }
+
+        string result  = string.Join(", ",arr2);
+        System.Console.WriteLine("Removed the occurence"+result);
+    }
 }
 
 
